@@ -14,11 +14,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/tituloTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Título" />
 
         <TextView
+            android:id="@+id/descricaoTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Descrição" />

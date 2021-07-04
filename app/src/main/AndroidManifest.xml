@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CMRe">
         <activity android:name=".NotasActivity"></activity>
+        <activity android:name=".CriarNotaActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,7 +7,7 @@
     tools:context=".NotasActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+        android:id="@+id/lista_notas_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
