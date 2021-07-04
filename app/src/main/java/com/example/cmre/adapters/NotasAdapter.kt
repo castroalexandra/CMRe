@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cmre.AtualizarNotaActivity
 import com.example.cmre.R
 import com.example.cmre.entities.Nota
 
@@ -58,6 +59,12 @@ class NotasAdapter(context: Context, private val intID:EnviarInformacao
             val titulo= holder.tituloItemView.text.toString()
             val descricao= holder.descricaoItemView.text.toString()
 
+            val intent = Intent( context, AtualizarNotaActivity::class.java).apply {
+                putExtra(TITULO, titulo )
+                putExtra(DESCRICAO, descricao )
+                putExtra(Build.ID,id)
+            }
+            context.startActivity(intent)
         }
 
         holder.delete.setOnClickListener{

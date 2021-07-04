@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -54,7 +55,7 @@ class CriarNotaActivity  : AppCompatActivity() {
     }
 
     companion object {
-        const val EXTRA_REPLY_TITULO = ""
-        const val EXTRA_REPLY_DESCRICAO = ""
+        const val EXTRA_REPLY_TITULO = "com.example.cmre.titulo"
+        const val EXTRA_REPLY_DESCRICAO = "com.example.cmre.descricao"
     }
 }

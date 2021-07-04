@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -62,6 +63,13 @@ class NotasActivity : AppCompatActivity(), NotasAdapter.EnviarInformacao {
         if (requestCode == newNotaActivityRequestCode && resultCode == Activity.RESULT_OK) {
             val ptitulo = data?.getStringExtra(CriarNotaActivity.EXTRA_REPLY_TITULO)
             val pdescricao = data?.getStringExtra(CriarNotaActivity.EXTRA_REPLY_DESCRICAO)
+
+            if (ptitulo != null) {
+                Log.e("titulo", ptitulo)
+            }
+            if (pdescricao != null) {
+                Log.e("descricao", pdescricao)
+            }
 
 
             if (ptitulo!= null && pdescricao != null) {
