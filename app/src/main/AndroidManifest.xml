@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CMRe">
+        <activity android:name=".AtualizarNotaActivity"></activity>
+        <activity android:name=".NotasActivity" />
+        <activity android:name=".CriarNotaActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
