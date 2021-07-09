@@ -19,13 +19,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Notas"
+            android:text="@string/Notas"
             android:backgroundTint="#ACC12F"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mapa"
+            android:text="@string/Notas"
             android:backgroundTint="#ACC12F"/>
 
     </LinearLayout>

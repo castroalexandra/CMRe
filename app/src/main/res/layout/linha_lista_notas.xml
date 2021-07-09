@@ -17,13 +17,13 @@
             android:id="@+id/tituloTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Título" />
+            android:text="@string/TituloNotas" />
 
         <TextView
             android:id="@+id/descricaoTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descrição" />
+            android:text="@string/descricaoNotas" />
 
     </LinearLayout>
 

@@ -4,5 +4,10 @@
     <string name="password" translatable="false">Password</string>
     <string name="loginBotao">Entrar</string>
     <string name="GuardarNotaBotao">Guardar</string>
+    <string name="Notas">Notas</string>
+    <string name="Mapa">Mapa</string>
+    <string name="TituloNotas">Titulo</string>
+    <string name="descricaoNotas">Descrição</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
