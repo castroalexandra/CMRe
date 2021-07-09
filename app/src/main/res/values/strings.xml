@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CMRe</string>
+    <string name="username">Nome de Utilizador</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="loginBotao">Entrar</string>
+    <string name="GuardarNotaBotao">Guardar</string>
+
 </resources>

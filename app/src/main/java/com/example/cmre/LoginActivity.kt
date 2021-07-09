@@ -16,7 +16,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -28,7 +28,9 @@ class Login : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.passwordET)
 
         val request = serviceBuilder.ServiceBuilder.buildService(EndPoints::class.java)
-        val call = request.login(password.text.toString(), password.text.toString())
+        val call = request.login(username.text.toString(), password.text.toString())
+
+        Log.e("sadfsa", call.toString())
 
         if (username.text.isNullOrEmpty() || password.text.isNullOrEmpty()) {
 
@@ -54,7 +56,7 @@ class Login : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<OutputPost>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.e("STATUS", t.toString())
             }
         })
 
