@@ -1,9 +1,11 @@
 package com.example.cmre
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.cmre.api.EndPoints
@@ -89,6 +91,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         private const val LOCATION_PERMISSION_REQUEST_CODE = 1
         //added to implement location periodic updates
         private const val REQUEST_CHECK_SETTINGS = 2
+    }
+
+    fun addNovoReport(view: View) {
+        val intent = Intent(applicationContext, CriarReportActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
 }

@@ -10,4 +10,20 @@ interface EndPoints {
 
         @GET("/MySlim/api/api/report")
         fun getReports(): Call<List<Report>>
+
+
+        @FormUrlEncoded
+        @POST("/MySlim/api/api/inserir_report")
+        fun adicionarReport(@Field("latitude") latitude: Double?,
+                            @Field("longitude") longitude: Double?,
+                            @Field("descricao") descricao: String?,
+                            @Field("imagem") imagem: String?,
+                            @Field("id_utilizador") users_id: Int?,
+                            @Field("titulo") titulo: String?,
+                            @Field("id_tipo") tipo_id: Int?
+        ): Call<OutputReports>
+
+
+
+
 }
