@@ -7,4 +7,7 @@ interface EndPoints {
         @FormUrlEncoded
         @POST("MySlim/api/api/user")
         fun login(@Field("username") first: String?, @Field("password") second: String?): Call<OutputPost>
+
+        @GET("/MySlim/api/api/report")
+        fun getReports(): Call<List<Report>>
 }
