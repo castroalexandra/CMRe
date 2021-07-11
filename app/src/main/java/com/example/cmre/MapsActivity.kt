@@ -6,9 +6,7 @@ import android.location.Location
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.CheckBox
-import android.widget.CompoundButton
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.example.cmre.api.EndPoints
@@ -22,8 +20,10 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.slider.Slider
+import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -92,6 +92,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         } else {
             mMap.isMyLocationEnabled = true
         }
+
+        val customInfoWindow = MarcadorCustom(this)
+
+        mMap!!.setInfoWindowAdapter(customInfoWindow)
+
+        //val marker = mMap!!.addMarker(markerOptions)
+        //marker.tag = info
+        //marker.showInfoWindow()
     }
 
     fun calcularDistancia(
@@ -139,6 +147,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                 reports = response.body()!!
                                 for (report in reports) {
                                     Log.e("dfghj", report.id_tipo.toString())
+                                    val info = InfoMarcador(
+                                        report.titulo,
+                                        report.descricao,
+                                        report.id_tipo,
+                                        report.imagem
+                                    )
+
                                     if ((calcularDistancia(
                                             location.latitude,
                                             location.longitude,
@@ -148,18 +163,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                     ) {
                                         position = LatLng(report.latitude, report.longitude)
 
-                                        mMap.addMarker(
-                                            MarkerOptions()
-                                                .position(position)
-                                                .title(report.titulo)
-                                                .snippet(report.descricao)
-                                                .icon(
-                                                    BitmapDescriptorFactory.defaultMarker(
-                                                        BitmapDescriptorFactory.HUE_YELLOW
-                                                    )
+                                        val markerOptions = MarkerOptions()
+                                        markerOptions.position(position)
+                                            .title(report.titulo)
+                                            .snippet(report.descricao)
+                                            .icon(
+                                                BitmapDescriptorFactory.defaultMarker(
+                                                    BitmapDescriptorFactory.HUE_YELLOW
                                                 )
-
-                                        )
+                                            )
+                                        val marcador = mMap.addMarker(markerOptions)
+                                        marcador.tag = info
                                     }
                                 }
                             }
