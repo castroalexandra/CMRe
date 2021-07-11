@@ -64,6 +64,7 @@ class LoginActivity : AppCompatActivity() {
 
                     val c: OutputPost = response.body()!!
                     startActivity(intent)
+                    finish()
                 }
             }
 

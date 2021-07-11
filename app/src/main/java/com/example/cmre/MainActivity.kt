@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             intent = Intent(this, LoginActivity::class.java)
         }
         startActivity(intent)
-        finish()
     }
 
     fun abrirNotas(view: View) {

@@ -1,6 +1,8 @@
 package com.example.cmre
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
@@ -202,7 +204,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     fun addNovoReport(view: View) {
         val intent = Intent(applicationContext, CriarReportActivity::class.java)
         startActivity(intent)
+    }
+
+    fun logout(view: View) {
+        val sharedPref: SharedPreferences = getSharedPreferences("LoginSP", Context.MODE_PRIVATE)
+        with(sharedPref.edit()){
+            putBoolean("estadoLogin", false)
+            putString("usernameLogin", "")
+            commit()
+        }
+        val intent = Intent(applicationContext, LoginActivity::class.java)
+        startActivity(intent)
         finish()
+
     }
 
 }
