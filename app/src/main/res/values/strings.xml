@@ -7,5 +7,9 @@
     <string name="title_activity_maps">Map</string>
     <string name="permissao_negada">Permissão negada</string>
     <string name="erro">Erro</string>
+    <string name="Notas">Notas</string>
+    <string name="Mapa">Mapa</string>
+    <string name="TituloNotas">Titulo</string>
+    <string name="descricaoNotas">Descrição</string>
 
 </resources>
