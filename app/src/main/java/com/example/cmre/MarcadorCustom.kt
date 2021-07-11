@@ -48,20 +48,6 @@ class MarcadorCustom(val context: Context) : GoogleMap.InfoWindowAdapter {
         val bmp = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.size)
         imagem.setImageBitmap(bmp)
 
-        /*Picasso.get().load("https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg")
-            .resize(250, 0).into(imagem,  object :
-            Callback {
-            override fun onSuccess() {
-                if (p0 != null && p0.isInfoWindowShown) {
-                    p0.hideInfoWindow()
-                    p0.showInfoWindow()
-                }
-            }
-
-            override fun onError(e: Exception?) {
-            }
-        });*/
-
         return mInfoView
     }
 

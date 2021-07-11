@@ -50,13 +50,12 @@ class LoginActivity : AppCompatActivity() {
         call.enqueue(object : Callback<OutputPost> {
             override fun onResponse(call: Call<OutputPost>, response: Response<OutputPost>) {
                 if (response.isSuccessful) {
-
                     //Shared Preferences Login
                     val sharedPref: SharedPreferences = getSharedPreferences("LoginSP", Context.MODE_PRIVATE)
                     with(sharedPref.edit()) {
                         putBoolean("estadoLogin", true)
                         putString("usernameLogin", username.text.toString())
-                        putInt("id_login", 2)
+                        putInt("id_login", response.body()!!.id)
 
                         commit()
 

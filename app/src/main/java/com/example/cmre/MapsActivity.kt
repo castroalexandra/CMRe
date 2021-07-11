@@ -130,7 +130,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 if (location != null) {
                     lastLocation = location
                     mMap.clear()
-                    Toast.makeText(this, "isChecked.toString()", Toast.LENGTH_SHORT).show()
                     val acidenteCB = findViewById<CheckBox>(R.id.checkBoxAcidente)
                     val obrasCB = findViewById<CheckBox>(R.id.checkBoxObras)
                     val buracoCB = findViewById<CheckBox>(R.id.checkBoxBuraco)
@@ -148,7 +147,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                             if (response.isSuccessful) {
                                 reports = response.body()!!
                                 for (report in reports) {
-                                    Log.e("dfghj", report.id_tipo.toString())
                                     val info = InfoMarcador(
                                         report.titulo,
                                         report.descricao,
@@ -165,15 +163,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                     ) {
                                         position = LatLng(report.latitude, report.longitude)
 
+                                        val sharedPref: SharedPreferences = getSharedPreferences("LoginSP", Context.MODE_PRIVATE)
+                                        var cor = BitmapDescriptorFactory.HUE_RED
+
+                                        if(sharedPref.all["id_login"]==report.id_utilizador){
+                                            cor = BitmapDescriptorFactory.HUE_BLUE
+                                        }
+
                                         val markerOptions = MarkerOptions()
                                         markerOptions.position(position)
                                             .title(report.titulo)
                                             .snippet(report.descricao)
-                                            .icon(
-                                                BitmapDescriptorFactory.defaultMarker(
-                                                    BitmapDescriptorFactory.HUE_YELLOW
-                                                )
-                                            )
+                                            .icon(BitmapDescriptorFactory.defaultMarker(cor))
                                         val marcador = mMap.addMarker(markerOptions)
                                         marcador.tag = info
                                     }

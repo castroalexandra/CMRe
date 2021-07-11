@@ -33,13 +33,15 @@
         <EditText
             android:id="@+id/passwordET"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="login"
-            android:text="@string/loginBotao"/>
+            android:text="@string/loginBotao"
+            android:backgroundTint="#ACC12F"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,9 @@ package com.example.cmre
 
 import android.Manifest
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.location.Location
@@ -22,6 +24,7 @@ import com.example.cmre.api.ServiceBuilder
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -84,8 +87,8 @@ class CriarReportActivity : AppCompatActivity(), AdapterView.OnItemSelectedListe
         val titulo  = tituloTV.text.toString()
         val descricao = descricaoTV.text.toString()
         val tipo = (tipoSP.selectedItemPosition + 1)
-
-        val userID = 2
+        val sharedPref: SharedPreferences = getSharedPreferences("LoginSP", Context.MODE_PRIVATE)
+        val userID:Int = sharedPref.getInt("id_login", 0)
 
         val bitmap = imageView.drawable.toBitmap()
         val byteArrayOutputStream = ByteArrayOutputStream()
@@ -99,7 +102,6 @@ class CriarReportActivity : AppCompatActivity(), AdapterView.OnItemSelectedListe
         call.enqueue(object : Callback<OutputReports> {
             override fun onResponse(call: Call<OutputReports>, response: Response<OutputReports>) {
                 if (response.isSuccessful) {
-                    Log.d("***", "funcionou insert")
                     val intent = Intent(applicationContext, MapsActivity::class.java)
                     startActivity(intent)
                     finish()
@@ -108,7 +110,6 @@ class CriarReportActivity : AppCompatActivity(), AdapterView.OnItemSelectedListe
 
             override fun onFailure(call: Call<OutputReports>, t: Throwable) {
                 //Toast.makeText(applicationContext, "${t.message}", Toast.LENGTH_SHORT).show()
-                Log.d("***", "ErrorOccur:  ${t.message}, ${call}")
 
 
             }

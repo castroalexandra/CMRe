@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <fragment
         android:id="@+id/map"
@@ -40,10 +41,12 @@
         map:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
+        android:layout_marginLeft="5dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="vertical"
+        android:padding="10dp"
         map:layout_constraintBottom_toBottomOf="@+id/map"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="parent">
@@ -54,6 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:buttonTint="#ACC12F"
             android:checked="true"
             android:text="@string/tipo_acidente" />
 
@@ -62,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:buttonTint="#ACC12F"
             android:checked="true"
             android:text="@string/tipo_obras" />
 
@@ -70,6 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:buttonTint="#ACC12F"
             android:checked="true"
             android:text="@string/tipo_buraco" />
 
@@ -79,7 +85,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:valueFrom="0.0"
-            android:valueTo="600000.0" />
+            android:valueTo="600000.0"
+            app:thumbColor="#ACC12F"
+            app:trackColorActive="#ACC12F"
+            app:trackColorInactive="#e6ecc0" />
 
     </LinearLayout>
 

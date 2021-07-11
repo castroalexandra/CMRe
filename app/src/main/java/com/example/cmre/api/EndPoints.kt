@@ -18,7 +18,7 @@ interface EndPoints {
                             @Field("longitude") longitude: Double?,
                             @Field("descricao") descricao: String?,
                             @Field("imagem") imagem: String?,
-                            @Field("id_utilizador") users_id: Int?,
+                            @Field("id_utilizador") id_utilizador: Int?,
                             @Field("titulo") titulo: String?,
                             @Field("id_tipo") id_tipo: Int?
         ): Call<OutputReports>
