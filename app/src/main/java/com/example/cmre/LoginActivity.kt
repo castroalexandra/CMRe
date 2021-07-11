@@ -1,12 +1,15 @@
 package com.example.cmre
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
-import com.example.cmre.api.EndPoints
 import com.example.cmre.api.OutputPost
+import com.example.cmre.api.EndPoints
 import com.example.cmre.api.ServiceBuilder
 import retrofit2.Call
 import retrofit2.Callback
@@ -20,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     fun login(view: View){
+        val intent = Intent(this, MapsActivity::class.java)
         val username = findViewById<EditText>(R.id.usernameET)
         val password = findViewById<EditText>(R.id.passwordET)
 
@@ -46,8 +50,20 @@ class LoginActivity : AppCompatActivity() {
         call.enqueue(object : Callback<OutputPost> {
             override fun onResponse(call: Call<OutputPost>, response: Response<OutputPost>) {
                 if (response.isSuccessful) {
+
+                    //Shared Preferences Login
+                    val sharedPref: SharedPreferences = getSharedPreferences("LoginSP", Context.MODE_PRIVATE)
+                    with(sharedPref.edit()) {
+                        putBoolean("estadoLogin", true)
+                        putString("usernameLogin", username.text.toString())
+                        putInt("id_login", 2)
+
+                        commit()
+
+                    }
+
                     val c: OutputPost = response.body()!!
-                    Log.d("STATUS", c.status.toString())
+                    startActivity(intent)
                 }
             }
 
