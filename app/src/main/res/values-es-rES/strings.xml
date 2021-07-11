@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">CMRe</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="loginBotao">Entrar</string>
+    <string name="GuardarNotaBotao">ahorrar</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="permissao_negada">Permiso denegado</string>
+    <string name="erro">Error</string>
+    <string name="Notas">Los grados</string>
+    <string name="Mapa">Mapa</string>
+    <string name="TituloNotas">Titulo</string>
+    <string name="descricaoNotas">Descripción</string>
+    <string name="descricaoPonto">Descripción</string>
+    <string name="TituloPonto">Titulo</string>
+
+    <string name="TipoPonto">Tipo</string>
+    <string name="imagem">Imagen</string>
+    <string name="camera">Cámara</string>
+    <string name="galeria">Galería</string>
+    <string name="criarPonto">Crear</string>
+    <string name="tipo_acidente">Accidente</string>
+    <string name="tipo_obras">Construcción</string>
+    <string name="tipo_buraco">Agujero</string>
+
+</resources>

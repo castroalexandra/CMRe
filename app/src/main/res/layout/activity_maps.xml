@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:checked="true"
-            android:text="Acidente" />
+            android:text="@string/tipo_acidente" />
 
         <CheckBox
             android:id="@+id/checkBoxObras"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:checked="true"
-            android:text="Obras" />
+            android:text="@string/tipo_obras" />
 
         <CheckBox
             android:id="@+id/checkBoxBuraco"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:checked="true"
-            android:text="Buraco" />
+            android:text="@string/tipo_buraco" />
 
 
         <com.google.android.material.slider.Slider

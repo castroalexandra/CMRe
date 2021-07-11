@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">CMRe</string>
+    <string name="app_name" translatable="false">CMRe</string>
     <string name="username">Nome de Utilizador</string>
-    <string name="password" translatable="false">Password</string>
+    <string name="password">Palavra-passe</string>
     <string name="loginBotao">Entrar</string>
     <string name="GuardarNotaBotao">Guardar</string>
     <string name="title_activity_maps">Map</string>
@@ -11,5 +11,16 @@
     <string name="Mapa">Mapa</string>
     <string name="TituloNotas">Titulo</string>
     <string name="descricaoNotas">Descrição</string>
+    <string name="descricaoPonto">Descrição</string>
+    <string name="TituloPonto">Titulo</string>
+
+    <string name="TipoPonto">Tipo</string>
+    <string name="imagem">Imagem</string>
+    <string name="camera">Câmera</string>
+    <string name="galeria">Galeria</string>
+    <string name="criarPonto">Criar</string>
+    <string name="tipo_acidente">Acidente</string>
+    <string name="tipo_obras">Obras</string>
+    <string name="tipo_buraco">Buraco</string>
 
 </resources>

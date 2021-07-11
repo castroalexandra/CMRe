@@ -35,7 +35,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Descrição" />
+                    android:text="@string/descricaoPonto" />
 
                 <EditText
                     android:id="@+id/DescricaoET"
@@ -45,7 +45,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Titulo" />
+                    android:text="@string/TituloPonto" />
 
 
                 <EditText
@@ -57,7 +57,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tipo" />
+                    android:text="@string/TipoPonto" />
 
                 <Spinner
                     android:id="@+id/TipoSP"
@@ -69,7 +69,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Imagem" />
+                    android:text="@string/imagem" />
 
 
                 <RelativeLayout
@@ -82,7 +82,7 @@
                         android:backgroundTint="#ACC12F"
                         android:onClick="tirarFoto"
                         android:padding="5px"
-                        android:text="Câmera" />
+                        android:text="@string/camera" />
 
 
                     <Button
@@ -92,7 +92,7 @@
                         android:backgroundTint="#ACC12F"
                         android:onClick="Galeria"
                         android:padding="5px"
-                        android:text="Galeria" />
+                        android:text="@string/galeria" />
                 </RelativeLayout>
 
 
@@ -103,7 +103,7 @@
                     android:backgroundTint="#ACC12F"
                     android:onClick="criarReport"
                     android:padding="5px"
-                    android:text="Criar"
+                    android:text="@string/criarPonto"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
