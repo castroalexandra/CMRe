@@ -20,7 +20,7 @@ interface EndPoints {
                             @Field("imagem") imagem: String?,
                             @Field("id_utilizador") users_id: Int?,
                             @Field("titulo") titulo: String?,
-                            @Field("id_tipo") tipo_id: Int?
+                            @Field("id_tipo") id_tipo: Int?
         ): Call<OutputReports>
 
 
